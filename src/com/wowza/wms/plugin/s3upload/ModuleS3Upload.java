@@ -378,9 +378,9 @@ public class ModuleS3Upload extends ModuleBase
 
 			// prefer to set region rather than endpoint which will be deprecated at some point.
 			regionName = props.getPropertyStr("s3UploadRegion", regionName);
+			endpoint = props.getPropertyStr("s3UploadEndpoint", endpoint);
 			if (StringUtils.isEmpty(regionName))
 			{
-				endpoint = props.getPropertyStr("s3UploadEndpoint", endpoint);
 				regionName = getRegion();
 			}
 			// if region or endpoint isn't set then use the default region.
